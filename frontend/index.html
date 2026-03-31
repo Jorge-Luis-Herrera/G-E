@@ -1,13 +1,40 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>frontend</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Glaymis Estilista | Estudio de Estilismo Capilar de Alta Gama</title>
+    <meta name="description" content="Estudio de estilismo capilar de alta gama. Cortes clásicos, coloración vanguardista y tratamientos capilares personalizados. Reserva tu cita en línea." />
+    <meta name="theme-color" content="#191970" />
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    
+    <!-- Fonts: preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
   </head>
   <body>
+    <!-- Skip to main content — WCAG 2.4.1 -->
+    <a href="#main-content" class="sr-only" style="position:absolute;top:-40px;left:0;background:#191970;color:#fff;padding:8px 16px;z-index:10000;font-size:14px;" onfocus="this.style.top='0';" onblur="this.style.top='-40px';">
+      Saltar al contenido principal
+    </a>
+    
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js').catch(function() {});
+        });
+      }
+    </script>
   </body>
 </html>

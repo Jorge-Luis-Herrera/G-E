@@ -1,0 +1,139 @@
+/* =====================================================
+   Reviews — Testimonios
+   Prominencia-Interpretación de Fogg: ubicados cerca del flujo de reserva
+   Trust Stack Emocional: prueba social dinámica
+   ===================================================== */
+
+.reviews {
+  padding: var(--space-11) 0;
+  background-color: var(--color-white);
+}
+
+.reviews__header {
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.reviews__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+.reviews__card {
+  padding: var(--space-6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.reviews__card:hover {
+  border-color: var(--color-midnight);
+  box-shadow: var(--shadow-sm);
+}
+
+.reviews__stars {
+  display: flex;
+  gap: 2px;
+  margin-bottom: var(--space-4);
+}
+
+.reviews__star {
+  width: 16px;
+  height: 16px;
+  color: var(--color-midnight);
+}
+
+.reviews__text {
+  font-size: var(--fs-base);
+  color: var(--color-text-secondary);
+  line-height: var(--lh-relaxed);
+  margin-bottom: var(--space-5);
+  font-style: italic;
+}
+
+.reviews__author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.reviews__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-midnight);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+}
+
+.reviews__author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.reviews__author-name {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-primary);
+}
+
+.reviews__author-service {
+  font-size: var(--fs-xs);
+  color: var(--color-text-tertiary);
+}
+
+/* Overall rating */
+.reviews__summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+  padding: var(--space-6);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+.reviews__summary-score {
+  font-family: var(--font-display);
+  font-size: var(--fs-4xl);
+  font-weight: var(--fw-bold);
+  color: var(--color-midnight);
+  line-height: 1;
+}
+
+.reviews__summary-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  text-align: left;
+}
+
+.reviews__summary-stars {
+  display: flex;
+  gap: 2px;
+}
+
+.reviews__summary-count {
+  font-size: var(--fs-sm);
+  color: var(--color-text-secondary);
+}
+
+@media (min-width: 769px) {
+  .reviews__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .reviews__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

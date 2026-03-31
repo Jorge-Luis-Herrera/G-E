@@ -1,0 +1,19 @@
+{
+  "name": "Glaymis Estilista",
+  "short_name": "Glaymis",
+  "description": "Estudio de estilismo capilar de alta gama. Reserva tu cita en línea.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#191970",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["beauty", "lifestyle"]
+}

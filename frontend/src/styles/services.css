@@ -1,0 +1,245 @@
+/* =====================================================
+   Services Section — Menú de Servicios
+   Ley de Hick: Divulgación Progresiva — categorías colapsables
+   WCAG 2.5.8: Objetivos táctiles ≥ 44px en botones de categoría
+   WCAG 3.3.7: Sin redundancia de información
+   ===================================================== */
+
+.services {
+  padding: var(--space-11) 0;
+  background-color: var(--color-white);
+}
+
+.services__header {
+  text-align: center;
+  margin-bottom: var(--space-9);
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Category Card (Accordion) */
+.services__category {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: box-shadow var(--duration-normal) var(--ease-out),
+              border-color var(--duration-normal) var(--ease-out);
+}
+
+.services__category:hover {
+  border-color: var(--color-midnight);
+  box-shadow: var(--shadow-sm);
+}
+
+.services__category--open {
+  border-color: var(--color-midnight);
+  box-shadow: var(--shadow-md);
+}
+
+/* Category Header (toggle button) */
+.services__category-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--space-5) var(--space-5);
+  min-height: 56px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color var(--duration-fast) var(--ease-out);
+}
+
+.services__category-header:hover {
+  background-color: var(--color-surface);
+}
+
+.services__category-header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.services__category-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  color: var(--color-midnight);
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.services__category--open .services__category-icon {
+  background-color: var(--color-midnight);
+  color: var(--color-white);
+}
+
+.services__category-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-primary);
+}
+
+.services__category-count {
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  color: var(--color-text-tertiary);
+  font-weight: var(--fw-regular);
+  margin-top: var(--space-1);
+}
+
+.services__category-chevron {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--color-text-tertiary);
+  transition: transform var(--duration-normal) var(--ease-out);
+}
+
+.services__category--open .services__category-chevron {
+  transform: rotate(180deg);
+  color: var(--color-midnight);
+}
+
+/* Category Content (collapsible) */
+.services__category-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--duration-slow) var(--ease-out);
+}
+
+.services__category--open .services__category-content {
+  max-height: 1000px;
+}
+
+.services__list {
+  padding: 0 var(--space-5) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* Individual Service Item */
+.services__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  transition: all var(--duration-fast) var(--ease-out);
+  min-height: 48px;
+}
+
+.services__item:hover {
+  background-color: var(--color-surface-alt);
+}
+
+.services__item-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.services__item-name {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-primary);
+}
+
+.services__item-duration {
+  font-size: var(--fs-xs);
+  color: var(--color-text-tertiary);
+}
+
+.services__item-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.services__item-price {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-midnight);
+}
+
+.services__item-book {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2) var(--space-4);
+  min-height: 36px;
+  min-width: 44px;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--color-midnight);
+  border: 1px solid var(--color-midnight);
+  border-radius: var(--radius-sm);
+  background: none;
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.services__item-book:hover {
+  background-color: var(--color-midnight);
+  color: var(--color-white);
+}
+
+/* Hygiene Badge — Trust Stack (near transaction flow) */
+.services__hygiene-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: var(--space-8);
+  padding: var(--space-5);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+.services__hygiene-icon {
+  color: var(--color-midnight);
+  flex-shrink: 0;
+}
+
+.services__hygiene-text {
+  font-size: var(--fs-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--lh-normal);
+}
+
+.services__hygiene-text strong {
+  color: var(--color-text-primary);
+  font-weight: var(--fw-semibold);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .services__item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+
+  .services__item-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

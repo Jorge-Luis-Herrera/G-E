@@ -1,0 +1,101 @@
+/* =====================================================
+   Team — Perfiles de Estilistas
+   Trust Stack: Conexión personal pre-visita
+   Prominencia-Interpretación de Fogg: credenciales visibles
+   ===================================================== */
+
+.team {
+  padding: var(--space-11) 0;
+  background-color: var(--color-surface);
+}
+
+.team__header {
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.team__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-5);
+}
+
+.team__card {
+  text-align: center;
+  padding: var(--space-7) var(--space-5);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border-light);
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.team__card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-midnight);
+}
+
+.team__avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  margin: 0 auto var(--space-5);
+  background-color: var(--color-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 2px solid var(--color-border);
+  transition: border-color var(--duration-normal) var(--ease-out);
+}
+
+.team__card:hover .team__avatar {
+  border-color: var(--color-midnight);
+}
+
+.team__avatar-initials {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  color: var(--color-midnight);
+}
+
+.team__name {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.team__role {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--color-midnight);
+  margin-bottom: var(--space-4);
+}
+
+.team__bio {
+  font-size: var(--fs-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--lh-relaxed);
+  margin-bottom: var(--space-5);
+}
+
+.team__specialties {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.team__specialty {
+  font-size: var(--fs-xs);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  background-color: var(--color-surface);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+}

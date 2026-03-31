@@ -1,0 +1,226 @@
+/* =====================================================
+   Booking — Sistema de Reservas
+   WCAG 3.3.7: No se pide información redundante
+   Trust Stack Funcional: sistema fiable, tolerante a fallos
+   Fitts's Law: inputs y botones amplios
+   ===================================================== */
+
+.booking {
+  padding: var(--space-11) 0;
+  background-color: var(--color-white);
+}
+
+.booking__header {
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.booking__container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--space-7);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+}
+
+/* Steps indicator */
+.booking__steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-7);
+}
+
+.booking__step {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.booking__step-number {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  border: 2px solid var(--color-border);
+  color: var(--color-text-tertiary);
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.booking__step--active .booking__step-number {
+  background-color: var(--color-midnight);
+  border-color: var(--color-midnight);
+  color: var(--color-white);
+}
+
+.booking__step--completed .booking__step-number {
+  background-color: var(--color-midnight);
+  border-color: var(--color-midnight);
+  color: var(--color-white);
+}
+
+.booking__step-label {
+  font-size: var(--fs-xs);
+  color: var(--color-text-tertiary);
+  display: none;
+}
+
+.booking__step--active .booking__step-label {
+  color: var(--color-midnight);
+  font-weight: var(--fw-semibold);
+}
+
+.booking__step-line {
+  width: 32px;
+  height: 2px;
+  background-color: var(--color-border);
+}
+
+.booking__step--completed + .booking__step-line,
+.booking__step--completed ~ .booking__step-line {
+  background-color: var(--color-midnight);
+}
+
+/* Form fields */
+.booking__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.booking__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.booking__label {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-primary);
+}
+
+.booking__input,
+.booking__select,
+.booking__textarea {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  min-height: 48px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--fs-base);
+  color: var(--color-text-primary);
+  background-color: var(--color-white);
+  transition: border-color var(--duration-fast) var(--ease-out),
+              box-shadow var(--duration-fast) var(--ease-out);
+}
+
+.booking__input:focus,
+.booking__select:focus,
+.booking__textarea:focus {
+  border-color: var(--color-midnight);
+  box-shadow: 0 0 0 3px rgba(25, 25, 112, 0.1);
+}
+
+.booking__input::placeholder {
+  color: var(--color-text-tertiary);
+}
+
+.booking__textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.booking__select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23555566' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: var(--space-8);
+}
+
+/* Date/Time Grid */
+.booking__datetime {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+/* Form actions */
+.booking__actions {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.booking__actions .btn {
+  flex: 1;
+}
+
+/* Success state */
+.booking__success {
+  text-align: center;
+  padding: var(--space-8) var(--space-5);
+}
+
+.booking__success-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: var(--color-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-5);
+  color: var(--color-success);
+}
+
+.booking__success-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  margin-bottom: var(--space-3);
+}
+
+.booking__success-text {
+  font-size: var(--fs-base);
+  color: var(--color-text-secondary);
+  line-height: var(--lh-relaxed);
+  margin-bottom: var(--space-5);
+}
+
+/* Offline notice */
+.booking__offline-notice {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background-color: #fff8e1;
+  border: 1px solid #ffe082;
+  border-radius: var(--radius-md);
+  font-size: var(--fs-sm);
+  color: #6d4c00;
+  margin-bottom: var(--space-4);
+}
+
+@media (min-width: 769px) {
+  .booking__step-label {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .booking__datetime {
+    grid-template-columns: 1fr;
+  }
+
+  .booking__container {
+    padding: var(--space-5);
+    border: none;
+    border-radius: 0;
+  }
+}
